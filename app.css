@@ -34,6 +34,11 @@ img {
     max-width: 100%;
 }
 
+.movie-item img {
+    max-width: 100%; /* Ensure image does not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+}
+
 .main-color {
     color: var(--main-color);
 }
