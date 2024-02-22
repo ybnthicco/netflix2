@@ -56,3 +56,28 @@ $(document).ready(() => {
         }
     })
 })
+
+
+
+
+
+
+
+
+
+
+// Function to handle search
+function handleSearch() {
+    // Get the value of the search input
+    var searchTerm = document.getElementById("searchInput").value;
+    
+    // Perform the search - this is just a basic example
+    // Replace this with your actual search implementation
+    alert("Performing search for: " + searchTerm);
+}
+
+// Add event listener to the search button
+document.getElementById("searchButton").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+    handleSearch();
+});
