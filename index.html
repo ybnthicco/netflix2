@@ -18,51 +18,17 @@
     <!-- APP CSS -->
     <link rel="stylesheet" href="grid.css">
     <link rel="stylesheet" href="app.css">
-	<style>
-	.search-box {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Adjust the margin as needed */
-}
-
-.search-box input[type="text"] {
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.search-box button {
-    background-color: #007bff; /* Change the color as needed */
-    color: #fff;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    padding: 8px 15px;
-    cursor: pointer;
-}
-
-.search-box button:hover {
-    background-color: #0056b3; /* Change the color as needed */
-}
-
-</style>
-	
-
 </head>
 
 <body>
-     <!-- NAV -->
+
+    <!-- NAV -->
     <div class="nav-wrapper">
         <div class="container">
             <div class="nav">
                 <a href="#" class="logo">
                     <i class='bx bx-movie-play bx-tada main-color'></i>Fl<span class="main-color">i</span>x
                 </a>
-				<!-- SEARCH BOX -->
-            <div class="search-box">
-                <input type="text" placeholder="Search...">
-                <button id="searchButton" type="button"><i class="bx bx-search"></i></button>
-            </div>
-            <!-- END SEARCH BOX -->
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Genre</a></li>
@@ -83,6 +49,7 @@
         </div>
     </div>
     <!-- END NAV -->
+
     <!-- HERO SECTION -->
     <div class="hero-section">
         <!-- HERO SLIDE -->
@@ -374,10 +341,35 @@
     <div class="section">
         <div class="container">
             <div class="section-header">
-                Latest movies
+                latest movies
             </div>
-            <div class="movies-slide carousel-nav-center owl-carousel" id="top-movies-slide">
-                <!-- Movie items will be dynamically added here by tmdb.js -->
+            <div class="movies-slide carousel-nav-center owl-carousel">
+                <!-- MOVIE ITEM -->
+                <a href="#" class="movie-item">
+                    <img src="./images/movies/theatre-dead.jpg" alt="">
+                    <div class="movie-item-content">
+                        <div class="movie-item-title">
+                            Theatre of the dead
+                        </div>
+                        <div class="movie-infos">
+                            <div class="movie-info">
+                                <i class="bx bxs-star"></i>
+                                <span>9.5</span>
+                            </div>
+                            <div class="movie-info">
+                                <i class="bx bxs-time"></i>
+                                <span>120 mins</span>
+                            </div>
+                            <div class="movie-info">
+                                <span>HD</span>
+                            </div>
+                            <div class="movie-info">
+                                <span>16+</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!-- END MOVIE ITEM -->
             </div>
         </div>
     </div>
@@ -995,9 +987,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
     <!-- APP SCRIPT -->
     <script src="app.js"></script>
-    <!-- tmdb SCRIPT -->
-    <script src="tmdb.js"></script>
-
 
 </body>
 
