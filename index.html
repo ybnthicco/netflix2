@@ -53,125 +53,13 @@
     <!-- HERO SECTION -->
     <div class="hero-section">
         <!-- HERO SLIDE -->
-        <div class="hero-slide">
-            <div class="owl-carousel carousel-nav-center" id="hero-carousel">
-                <!-- SLIDE ITEM -->
-                <div class="hero-slide-item">
-                    <img src="./images/black-banner.png" alt="">
-                    <div class="overlay"></div>
-                    <div class="hero-slide-item-content">
-                        <div class="item-content-wraper">
-                            <div class="item-content-title top-down">
-                                Black Panther
-                            </div>
-                            <div class="movie-infos top-down delay-2">
-                                <div class="movie-info">
-                                    <i class="bx bxs-star"></i>
-                                    <span>9.5</span>
-                                </div>
-                                <div class="movie-info">
-                                    <i class="bx bxs-time"></i>
-                                    <span>120 mins</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>HD</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>16+</span>
-                                </div>
-                            </div>
-                            <div class="item-content-description top-down delay-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt non odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias ratione mollitia accusantium, facere ab suscipit.
-                            </div>
-                            <div class="item-action top-down delay-6">
-                                <a href="#" class="btn btn-hover">
-                                    <i class="bx bxs-right-arrow"></i>
-                                    <span>Watch now</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END SLIDE ITEM -->
-                <!-- SLIDE ITEM -->
-                <div class="hero-slide-item">
-                    <img src="./images/supergirl-banner.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="hero-slide-item-content">
-                        <div class="item-content-wraper">
-                            <div class="item-content-title top-down">
-                                Supergirl
-                            </div>
-                            <div class="movie-infos top-down delay-2">
-                                <div class="movie-info">
-                                    <i class="bx bxs-star"></i>
-                                    <span>9.5</span>
-                                </div>
-                                <div class="movie-info">
-                                    <i class="bx bxs-time"></i>
-                                    <span>120 mins</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>HD</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>16+</span>
-                                </div>
-                            </div>
-                            <div class="item-content-description top-down delay-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt non odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias ratione mollitia accusantium, facere ab suscipit.
-                            </div>
-                            <div class="item-action top-down delay-6">
-                                <a href="#" class="btn btn-hover">
-                                    <i class="bx bxs-right-arrow"></i>
-                                    <span>Watch now</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END SLIDE ITEM -->
-                <!-- SLIDE ITEM -->
-                <div class="hero-slide-item">
-                    <img src="./images/wanda-banner.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="hero-slide-item-content">
-                        <div class="item-content-wraper">
-                            <div class="item-content-title top-down">
-                                Wanda Vision
-                            </div>
-                            <div class="movie-infos top-down delay-2">
-                                <div class="movie-info">
-                                    <i class="bx bxs-star"></i>
-                                    <span>9.5</span>
-                                </div>
-                                <div class="movie-info">
-                                    <i class="bx bxs-time"></i>
-                                    <span>120 mins</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>HD</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>16+</span>
-                                </div>
-                            </div>
-                            <div class="item-content-description top-down delay-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt non odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias ratione mollitia accusantium, facere ab suscipit.
-                            </div>
-                            <div class="item-action top-down delay-6">
-                                <a href="#" class="btn btn-hover">
-                                    <i class="bx bxs-right-arrow"></i>
-                                    <span>Watch now</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END SLIDE ITEM -->
-            </div>
-        </div>
-        <!-- END HERO SLIDE -->
+<div class="hero-slide">
+    <div class="owl-carousel carousel-nav-center" id="hero-carousel">
+        <!-- SLIDE ITEMS WILL BE POPULATED DYNAMICALLY VIA JAVASCRIPT -->
+    </div>
+</div>
+<!-- END HERO SLIDE -->
+
         <!-- TOP MOVIES SLIDE -->
         <div class="top-movies-slide">
             <div class="owl-carousel" id="top-movies-slide">
@@ -512,6 +400,67 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
     <!-- APP SCRIPT -->
     <script src="app.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+    // Function to fetch movie details from TMDb API
+    function fetchMovieDetails(movieId) {
+        var apiKey = '2051710e2b77f17652a595dbc3a52425';
+        var url = 'https://api.themoviedb.org/3/movie/' + movieId + '?api_key=' + apiKey;
+
+        $.ajax({
+            url: url,
+            method: 'GET',
+            success: function(response) {
+                // Populate hero slide with fetched movie data
+                var heroSlideItem = `
+                    <div class="hero-slide-item">
+                        <img src="https://image.tmdb.org/t/p/w500${response.poster_path}" alt="${response.title}">
+                        <div class="overlay"></div>
+                        <div class="hero-slide-item-content">
+                            <div class="item-content-wraper">
+                                <div class="item-content-title top-down">${response.title}</div>
+                                <div class="movie-infos top-down delay-2">
+                                    <div class="movie-info">
+                                        <i class="bx bxs-star"></i>
+                                        <span>${response.vote_average}</span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <i class="bx bxs-time"></i>
+                                        <span>${response.runtime} mins</span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span>${response.adult ? '18+' : 'PG'}</span>
+                                    </div>
+                                </div>
+                                <div class="item-content-description top-down delay-4">${response.overview}</div>
+                                <div class="item-action top-down delay-6">
+                                    <a href="#" class="btn btn-hover">
+                                        <i class="bx bxs-right-arrow"></i>
+                                        <span>Watch now</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                $('#hero-carousel').append(heroSlideItem);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching movie details:', error);
+            }
+        });
+    }
+
+    // Call fetchMovieDetails function for each movie in your hero slide
+    var movieIds = [1, 2, 3]; // Example movie IDs
+    movieIds.forEach(function(movieId) {
+        fetchMovieDetails(movieId);
+    });
+});
+
+    </script>
 
 </body>
 
