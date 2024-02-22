@@ -403,48 +403,17 @@
 
 
     <script>
-        $(document).ready(function() {
+     $(document).ready(function() {
     // Function to fetch movie details from TMDb API
     function fetchMovieDetails(movieId) {
-        var apiKey = '2051710e2b77f17652a595dbc3a52425';
-        var url = 'https://api.themoviedb.org/3/movie/' + movieId + '?api_key=' + apiKey;
+        const apiKey = '2051710e2b77f17652a595dbc3a52425';
+        const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`;
 
         $.ajax({
             url: url,
             method: 'GET',
             success: function(response) {
-                // Populate hero slide with fetched movie data
-                var heroSlideItem = `
-                    <div class="hero-slide-item">
-                        <img src="https://image.tmdb.org/t/p/w500${response.poster_path}" alt="${response.title}">
-                        <div class="overlay"></div>
-                        <div class="hero-slide-item-content">
-                            <div class="item-content-wraper">
-                                <div class="item-content-title top-down">${response.title}</div>
-                                <div class="movie-infos top-down delay-2">
-                                    <div class="movie-info">
-                                        <i class="bx bxs-star"></i>
-                                        <span>${response.vote_average}</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <i class="bx bxs-time"></i>
-                                        <span>${response.runtime} mins</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>${response.adult ? '18+' : 'PG'}</span>
-                                    </div>
-                                </div>
-                                <div class="item-content-description top-down delay-4">${response.overview}</div>
-                                <div class="item-action top-down delay-6">
-                                    <a href="#" class="btn btn-hover">
-                                        <i class="bx bxs-right-arrow"></i>
-                                        <span>Watch now</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                const heroSlideItem = createHeroSlideItem(response);
                 $('#hero-carousel').append(heroSlideItem);
             },
             error: function(xhr, status, error) {
@@ -453,8 +422,43 @@
         });
     }
 
+    // Function to create HTML for hero slide item
+    function createHeroSlideItem(movie) {
+        return `
+            <div class="hero-slide-item">
+                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+                <div class="overlay"></div>
+                <div class="hero-slide-item-content">
+                    <div class="item-content-wraper">
+                        <div class="item-content-title top-down">${movie.title}</div>
+                        <div class="movie-infos top-down delay-2">
+                            <div class="movie-info">
+                                <i class="bx bxs-star"></i>
+                                <span>${movie.vote_average}</span>
+                            </div>
+                            <div class="movie-info">
+                                <i class="bx bxs-time"></i>
+                                <span>${movie.runtime} mins</span>
+                            </div>
+                            <div class="movie-info">
+                                <span>${movie.adult ? '18+' : 'PG'}</span>
+                            </div>
+                        </div>
+                        <div class="item-content-description top-down delay-4">${movie.overview}</div>
+                        <div class="item-action top-down delay-6">
+                            <a href="#" class="btn btn-hover">
+                                <i class="bx bxs-right-arrow"></i>
+                                <span>Watch now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
     // Call fetchMovieDetails function for each movie in your hero slide
-    var movieIds = [1, 2, 3]; // Example movie IDs
+    const movieIds = [1, 2, 3]; // Example movie IDs
     movieIds.forEach(function(movieId) {
         fetchMovieDetails(movieId);
     });
