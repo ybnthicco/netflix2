@@ -36,7 +36,6 @@ img {
 
 .movie-item img {
     max-width: 100%; /* Ensure image does not exceed container width */
-    min-height: auto; /* Maintain aspect ratio */
 }
 
 .main-color {
