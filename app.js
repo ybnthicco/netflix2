@@ -2,11 +2,20 @@ $(document).ready(() => {
     $('#hamburger-menu').click(() => {
         $('#hamburger-menu').toggleClass('active')
         $('#nav-menu').toggleClass('active')
-    })
+    });
+
+    // Function to handle search
+    $('#searchButton').click(() => {
+        // Get the value of the search input
+        var searchTerm = $('#searchInput').val();
+        
+        // Perform the search - this is just a basic example
+        // Replace this with your actual search implementation
+        alert("Performing search for: " + searchTerm);
+    });
 
     // setting owl carousel
-
-    let navText = ["<i class='bx bx-chevron-left'></i>", "<i class='bx bx-chevron-right'></i>"]
+    let navText = ["<i class='bx bx-chevron-left'></i>", "<i class='bx bx-chevron-right'></i>"];
 
     $('#hero-carousel').owlCarousel({
         items: 1,
@@ -16,7 +25,7 @@ $(document).ready(() => {
         navText: navText,
         autoplay: true,
         autoplayHoverPause: true
-    })
+    });
 
     $('#top-movies-slide').owlCarousel({
         items: 2,
@@ -35,7 +44,7 @@ $(document).ready(() => {
                 items: 6
             }
         }
-    })
+    });
 
     $('.movies-slide').owlCarousel({
         items: 2,
@@ -54,30 +63,5 @@ $(document).ready(() => {
                 items: 6
             }
         }
-    })
-})
-
-
-
-
-
-
-
-
-
-
-// Function to handle search
-function handleSearch() {
-    // Get the value of the search input
-    var searchTerm = document.getElementById("searchInput").value;
-    
-    // Perform the search - this is just a basic example
-    // Replace this with your actual search implementation
-    alert("Performing search for: " + searchTerm);
-}
-
-// Add event listener to the search button
-document.getElementById("searchButton").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default form submission behavior
-    handleSearch();
+    });
 });
